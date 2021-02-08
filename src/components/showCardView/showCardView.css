@@ -1,0 +1,25 @@
+.Card {
+    display: block;
+    
+    max-width: 400px;
+    height: 250px;
+    border: 1px solid rgb(0,0,0,0.3);
+    border-radius: 8px;
+    margin: 8px 0;
+}
+.imgbox {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+.imgbox img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

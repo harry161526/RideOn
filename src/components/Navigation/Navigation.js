@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Navigation.css';
-import Modal from '../Modal/Modal';
-import Aux from '../../Aux/Aux'
+
 
 const Navigation  = (props) =>{
     const [sidebarOpen,setSidebar] = useState(false);
@@ -19,9 +18,9 @@ const Navigation  = (props) =>{
                         </a>
                     </div>
                     <ul className={sidebarOpen ? 'menu active':'menu'}>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="#">Car Listing</a></li>
-                        <li><a href="#">Aboutus</a></li>
+                        <li><a href="/aboutus">Aboutus</a></li>
                         <li><a href="#">Login</a></li>
                     </ul>
                     <div className='menu-btn' onClick={changeSideBar}>

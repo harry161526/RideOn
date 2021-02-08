@@ -1,0 +1,22 @@
+export const FounderData = [
+    {
+        name : 'Sai vaddemani',
+        image : 'https://lh3.googleusercontent.com/JcelS9Ov8ECIOQ8r-W1giRkSsCLK0iBwtjlhtBj4lxYq1qwjrmIb_9Gp5zWuEPAtuS-BFWF1AE1vnbqn59ZckzrIgU-_6wr58HjAiGG8KKY7KwqTyplo8BVnUvv03VRzPnydBMmi9-dBNi2pg3JoSmnhJ10P6xeqmJvtbBZ2QZT1KYmho9oZrMxkFNdM5O6Fd2DxLGPlMEZzIO2Q5AvccUtltl4de2R14rRSH3TFJCjvkiS3yEthF5phImv-7IhmQBjqJDglOGEXT4Wv_tifF__lnAZXLi8CD_NBrn6PoGqpwlbti3p3C6YS9o_eMdjhu2id8b10xDsLPjdiwdHPqFaw9_DSZmBwZQDoApVqJGpQMV53KEnARE8k_wP8WLeUg5ESFl1xdXTFM64eDvOfmPJWZwn6N8r1GQym4RjY4Q8w2JWiDUVdoi6zpDgVp-zzDFHu3rFjZLx0h1OsxQF9k5_QOtM1kbkWNmaI_swQZOQjot7Hp-rIrTDGPSuLsAttSlX960QWCKdDPnxWfadyazZZo07X2iSwOxebXmGjDxrFHN6RKyLcI5ZKvj051hMazM5iaudV_a-aITstgqORgCrIwzHeCJBPdITLN8Ovfkp8b40ZOCncAZi1Dz0_Wj3wkdUaC8rF88Gu8v0MotnuWdWhYkJyAzLi-I8UCiAzdWd02uyBUKTmrK2QqMELbQ=s637-no?authuser=0',
+        alt : 'sai-founder'
+    },
+    {
+        name : 'Avinash Konda',
+        image : 'https://lh3.googleusercontent.com/JiIisiTulJQ4jvn0yG17cHvUmDbxZQRbLeKgM84Eauk3nSWIk5wqsJgTZYQLRjsiulURJj0kH9cRPiq1YOhihCHt_ag0IR028xMu79DL272O6xe1VZdxF5-ponm0kV3y-OMDLXAQZWSexeo4laZqjVfpC5MQ6wZG2kBpfN5EIjbuRo5XpZSe3r5OQeR9BByXPNLGwW7yCgOcqo-10Vq1uz-EYJ-Syq_i5XIss8Arw1bv--xikzHAasjOteGD0feB-f8-ckJd1U4apkiv2pPq3MIC_xkOxOoB7nLbP8uJO-koZCWYeve5SUcJWVQwCgVHuoXqGW-bmTXXi1LkgKSclFThwRMsjeo8luf_cAe5qvGDZpkyxhK0uehkQfH5B1qp78j5O_96vTzKtDQd7iOPvhUJ2i0Fn7lLs13Z99SFvbhOkS2whQ7agSCMxy6RdVaJr0r7snSqW86GbxKqpnGtftquCD1jZ8_B4JUQAgKRVJI6ZrYtjhiu5ASFQLIRMYlXwkQDNyXEO9pfM_QYAYCGJ_JT1xftJ6TRohRuposMQgA917EeggZ-elhsD9vHZdsU3EKiJ-3aR13HejuDMPVlINFfJHWmsytHLQRD4KWH0B4UDnGhE7dbHgOMJD9yWKldDDtm_Zm06S1-WIwoRztWShRamQogl-NRXCzyJzHJBp-oWXhQg8gztofOowrqZw=w404-h491-no?authuser=0',
+        alt : 'avinash-founder'
+    },
+    {
+        name : 'Jayahari Bodicharla',
+        image : 'https://lh3.googleusercontent.com/GfUsN0ypp24ow89HFJCkthp7crEHSeLmBPBjc7F0WdHORU8uo1TfbvvN6Ue_FFE7ZuJ8vxqQ51cJLyVLYglDhvG7t31WsoRSjxEFDGVOB9wdrqeLlQEqC4SwZvyFiroqQk9lArjVVKe_5kCnjs-DVMcOTcTBi0KwnMR_hd0wLGf0bU6NCb_WTZSAa7CeeSiTxR8ItIeru-mkoMNvEsk7V_gPN0F5IXtE95rO7GvFr6gv8r_KtoeJzRysKzXWXPYyWAYIeDlmK9Q9NCS9etOdj7dCLXwyEGzwp45rW2AIGJPzIr1OnlE8c-y4HX5p7rN8MsO39bK1ZUGjN2NwKJSioqEpXJEtx6pzHdwwDYWW6TKTQYdEgkQIE4KBf56pGXmTh8NRQe5D6V-sPx0NTRgRnR69yoqcMKxGwvBUPsHo_0VBNG804NMg6ao5kn1bgQDFU__XstPXEhefxT5Br_pDvMt0IxWsMIKQosmk_leT7nRXUNBuoqBrqpMuj3gfKaeobzjBFKInDuLBWBMZrmcYZqobpZsf0ACaVUW-8sN-6lV7rzfU65vAL62SzR9ZItq_wZtohJnsO6hSGSjDNV4dbHwjo3mxsdvtK4x1WdgEw5Q9NCbIuGS1hfMVBRKaBB8cx8HJAkImhrXHcGhmkXA3daq18JAEcvYEBKzGGwViuNOs1eAtsljEEI5SD4NYKg=w389-h536-no?authuser=0',
+        alt : 'jayahari-founder'
+    },
+    {
+        name : 'Suryavamsi Singanaboyina',
+        image : 'https://lh3.googleusercontent.com/47HIHOwwD3atuEQhnf0-6YAS2NsGb2gdytyAfSPmxZTyE7kVkvp0vD15zIW0T49XENI16JP55xo_y2XOOg4b9CI4hrVYevNmnBp7anxzVSUiVHK0indRXOGEGrwccr5P9ZhwTBOIZ-LubVkUaAgZr0fHKXSgPxkFK1b-O-m6a_E3zRsKaaNTg6spy_sxU-gRGgj4fMfy-Nx5XeNgEufUGVbwUG9msvLdNZ3l5Ot-qDY-eGCcOZ9LgOMZjjxM21b-TM8X93rN3MWxGQvrml4CQghqPSpvSalUPoONQcY4_8IQQvTNJEf2xcnZze9s7BoRjR3fA335UndM9vCMWD-ssOStvTd9Tj_hohdpCOqwUQZiTogbCEMQaMEVu0EMUGU8LiUOKoodoxtbgguCzWu9LLvYl4k1gSK_JUtY8RIHLc1Wby5McrilAhh_zyNrQGYSpb5GR4DT3KArvCs_iVPvw0XWTZOhVPnpCrW5QJWJxXoGKrnirQzmZrpUt59GsXmuwzUrrQosvB0MAjyu53inJPmo7cVrIeSeZh9kde5_B0Qdsa5gYAC21l0iKMy0zan6p4_eZK5O_yYe7geLE81a-qmPa22XAfnZms-UaW7aEfCGa2RwDubn6WoSRdh8xIqalxTVpB5fArCVCchxFF7IrTT3dDV816el8bD_x_egY79prV5UZJzkIiNjB1t0lQ=w835-h637-no?authuser=0',
+        alt : 'suryavamsi-founder'
+    }
+]

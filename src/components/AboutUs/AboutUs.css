@@ -1,0 +1,68 @@
+.aboutus {
+    display: block;
+    margin-top: 66px;
+    width: 100%;
+}
+.head-section {
+    width: 100%;
+    height: 70vh;
+    background: url('https://images.pexels.com/photos/787476/pexels-photo-787476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') rgba(0,0,0,0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+.head-section h1 {
+    color: #fff;
+    display: inline;
+    font-size: 4rem;
+    position: relative;
+    width: fit-content;
+    top: 30%;
+    left: 37%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    transition: 0.3s all ease-out;
+    border-radius: 5px;
+}
+.head-section h1:hover {
+    background-color: #1d2533;
+}
+
+.aboutus-content {
+    text-align: center;
+    padding: 3rem 0.5rem;
+    width: 90%;
+    margin: 0 auto;
+}
+.aboutus-content h1 {
+    margin-bottom: 1rem;
+    color: rgba(0,0,0,.8);
+}
+.aboutus-content p {
+    color: rgba(0,0,0,.6);
+}
+.founders-container {
+    max-width: 1700px;
+    width : 100%;
+    min-height : 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    background-color: #1d2533;
+    text-align: center;
+    padding: 1rem 0.5rem;
+}
+.founders-container h1 {
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+.founders {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
