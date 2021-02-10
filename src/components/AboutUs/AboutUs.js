@@ -5,11 +5,11 @@ import Founder from '../FounderCard/Founder'
 
 function AboutUs() {
     const founders = FounderData.map((founder,index) => {
-        return <Founder name={founder.name} image={founder.image} alt={founder.alt} />
+        return <Founder key={index} name={founder.name} image={founder.image} alt={founder.alt} />
     })
     return (
         <div className="aboutus">
-            <div className="head-section">
+            <div className="head-section1">
                 <h1>About Us</h1>
             </div>
             <div className="aboutus-content">

@@ -1,10 +1,36 @@
-import react from 'react';
+import react, { useState,useEffect } from 'react';
 import './HomeSection.css';
-import {CgChevronRight} from 'react-icons/cg'
+import {CgChevronRight, CgOptions} from 'react-icons/cg'
 import ShowCardView from '../showCardView/showCardView';
 import Testimonial from '../testimonial/testimonial'
 
 const HomeSection = () => {
+    const BASE_URL = 'https://rocky-river-62504.herokuapp.com/';
+    const [BrandData,setBrandData] = useState([]);
+    const [loading,setloading] = useState(false)
+
+    useEffect(async () => {
+            
+        if(BrandData.length == 0)
+        {
+            setloading(true)
+            const response = await fetch("https://rocky-river-62504.herokuapp.com/cars/brands/");
+            const res = await response.json();
+            setBrandData(res);
+            setloading(false)
+        } 
+    
+    },[BrandData]);
+
+    let brands = null;
+    if(!loading)
+    {
+        console.log(BrandData)
+        brands = BrandData.map(brand => {
+            return <ShowCardView key={brand._id} image={BASE_URL+brand.logo} brandname={brand.brand}/>
+        })
+    }
+   
     return(
         <div className="hero-container">
            <div className="head-section">
@@ -19,15 +45,10 @@ const HomeSection = () => {
                     you can get joy of travelling in the cars of famous brands with affordale prices.
                 </p>
            </div>
-           <div className="showCarsContainer">
+           <div className="showCarBrandsContainer">
             <h1>Our Popular Brands</h1>
-            <div className="showCars">
-                <ShowCardView />
-                <ShowCardView />
-                <ShowCardView />
-                <ShowCardView />
-                <ShowCardView />
-                <ShowCardView />
+            <div className="showCarBrands">
+                {brands}
             </div>
            </div>
            <div className="testimonials_container">

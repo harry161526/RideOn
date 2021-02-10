@@ -19,7 +19,7 @@ const Navigation  = (props) =>{
                     </div>
                     <ul className={sidebarOpen ? 'menu active':'menu'}>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Car Listing</a></li>
+                        <li><a href="/car-listings">Car Listing</a></li>
                         <li><a href="/aboutus">Aboutus</a></li>
                         <li><a href="#">Login</a></li>
                     </ul>

@@ -1,6 +1,6 @@
 .testimonial-card {
     width: 280px;
-    height: 260px;
+    height: 300px;
     background: white;
     border: 1px solid rgba(0,0,0,0.1);
     display: flex;
@@ -9,6 +9,7 @@
     align-items: center;
     padding: 0.3rem;
     box-shadow: 6px 6px 30px rgba(0,0,0,0.5);
+    margin: 8px 0;
 }
 .testimonial-card > p {
     font-size: 2rem;
