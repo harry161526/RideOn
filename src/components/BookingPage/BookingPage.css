@@ -1,0 +1,129 @@
+.booking-page {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+}
+.form-container {
+    width: 100%;
+    min-width: 200px;
+    max-width: 769px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    border: 1px solid rgb(231, 231, 231);
+    background: rgb(248, 248, 248,0.5);
+    box-shadow: 10px 0 50px rgba(0,0,0,0.4);
+}
+.form-container h1 {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    color: #1d2355;
+}
+input {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem 0.8rem;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    margin: 5px 0;
+    outline: none;
+}
+input:active,
+input:focus,
+textarea:active,
+textarea:focus {
+    border-color: #1d2355;
+}
+
+.input-name-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0.8;
+}
+.input-email-container,
+.input-phone-container
+{
+    margin: 8px 0;
+    width: 100%;
+    display: flex;
+}
+.input-email-container input {
+    width: 50%;
+    min-width: 250px;
+    max-width: 100%;
+}
+.input-date-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ 
+    
+}
+.input-date-container div {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.input-date-container div label {
+    font-size: 1rem;
+}
+.input-date-container input {
+    max-width: 200px;
+}
+.driver-required-container {
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.driver-required-container div {
+    display: flex;
+    width: 100%
+}
+
+.id-proofs-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.id-proofs-container div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.id-proofs-container div label {
+    font-size: 0.8rem;
+}
+.location-container {
+    width: 60%;
+    margin: 10px 0;
+    
+}
+.location-container div {
+    display: flex;
+    flex-direction: column;
+}
+.location-container div label {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+textarea{
+    outline: none;
+    resize: none;
+    border: 1px solid #d8d8d8;
+}

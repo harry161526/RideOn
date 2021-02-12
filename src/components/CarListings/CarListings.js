@@ -18,7 +18,7 @@ function CarListings() {
         }
        
     },[cars]);
-
+    console.log(cars);
     let result = null;
 
     if(!loading)

@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+* {
+    font-family: 'Open sans',sans-serif;
+}
+
 .carlistings-container {
     margin-top: 66px;
+    font-family: inherit;
 }
 .head-section-2 {
     background : url('https://www.cardenasautogroup.com/public/images/home_m.jpg');

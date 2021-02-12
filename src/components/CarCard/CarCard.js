@@ -8,7 +8,7 @@ function CarCard({Cardata}) {
     return (
         <div className="car-card">
             <div className="imgbox">
-                <img src={BASE_URL+Cardata.image} alt={Cardata.name} />
+                <img src={BASE_URL+Cardata.image1} alt={Cardata.name} />
             </div>
             <div className="car-info">
                 <h2>{Cardata.name+" - "+Cardata.modelName}</h2>
