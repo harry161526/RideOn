@@ -1,137 +1,105 @@
-import React, { useState } from 'react';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Radio from '@material-ui/core/Radio'
-import 'react-datepicker/dist/react-datepicker.css'
-import 'date-fns'
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import FormControl from './FormControl';
 import './BookingPage.css';
 
 function BookingPage() {
-    const [firstname, SetFirstName] = useState("");
-    const [lastname, SetLastName] = useState("");
-    const [email, SetEmail] = useState("");
-    const [mobile, SetMobile] = useState("");
-    const [pickuppoint, SetPickupPoint] = useState("");
-    const [droppingpoint, SetDroppingPoint] = useState("");
-    const [pickupdate, SetPickupDate] = useState("");
-    const [pickuptime, SetPickupTime] = useState("");
-    const [droppingdate, SetDroppingDate] = useState("");
-    const [droppingtime, SetDroppingTime] = useState("");
-    const [driverrequired, SetDriverRequired] = useState(false);
+    const radioOptions = [
+        { key: 'yes', value: 'Yes' },
+        { key: 'no', value: 'No' }
+    ]
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        mobileNumber: '',
+        pickupDate: null,
+        droppingDate: null,
+        pickupAddress: '',
+        driverRequired: 'Yes',
+        agree: false,
+        license : '',
+        identity : '',
+    }
+    const onSubmit = values => {
+        console.log(values)
+    }
 
-    const handleChange = (event) => {
+    const validationSchema = Yup.object({
+        firstName: Yup.string().required('Required').min(3).max(15),
+        lastName: Yup.string().required('Required').min(3),
+        email: Yup.string().email('Invalid Email').required('Required'),
+        mobileNumber: Yup.string().required('Required').length(10),
+        pickupDate: Yup.date().required('Required'),
+        droppingDate : Yup.date().required('Required'),
+        pickupAddress: Yup.string().min(10).max(100).required('Required'),
+        driverRequired: Yup.string().required('Required'),
+        agree: Yup.boolean().required('Required'),
+        license : Yup.string().when('driverRequired',{
+            is : 'Yes',
+            then : Yup.string(),
+            otherwise : Yup.string().required('Required')
+        }),
+        identity : Yup.string().when('driverRequired',{
+            is : 'Yes',
+            then : Yup.string(),
+            otherwise : Yup.string().required('Required')
+        })
 
-        SetDriverRequired(event.target.value);
-
+    })
+    if(initialValues.driverRequired == 'No')
+    {
+        console.log('called')
+        validationSchema.fields.identity = Yup.string().required('req')
+        validationSchema.fields.license = Yup.string().required('req')
     }
     return (
-        <div className="booking-page">
-            <form className="form-container">
-                <h1>Book your Ride</h1>
-                <div className="input-name-container">
-                    <input type="text"
-                        value={firstname}
-                        placeholder="First Name"
-                        onChange={(e) => SetFirstName(e.target.value)}
-                        required />
-                    <input type="text"
-                        value={lastname}
-                        placeholder="Last Name"
-                        onChange={(e) => SetLastName(e.target.value)}
-                        required />
-                </div>
-                <div className="input-email-container">
-                    <input
-                        type="email"
-                        value={email}
-                        placeholder="Enter Email"
-                        onChange={(e) => SetEmail(e.target.value)}
-                        required />
-                </div>
-                <div className="input-phone-container">
-                    <input
-                        type="number"
-                        value={mobile}
-                        placeholder="Enter Mobile number"
-                        onChange={(e) => SetMobile(e.target.value)}
-                        required />
-                </div>
-                <div className="input-date-container">
-                    <div>
-                        <label>Pickup Date</label>
-                        <input
-                            type="date"
-                            value={pickupdate}
-                            placeholder="Pickup Date"
-                            onChange={date => SetPickupDate(date.target.value)}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label>Pickup Time</label>
-                        <input
-                            type="time"
-                            value={pickuptime}
-                            placeholder="Dropping Date"
-                            onChange={date => SetPickupTime(date.target.value)}
-                            required
-                        />
-                    </div>
-
-                </div>
-                <div className="input-date-container">
-                    <div>
-                        <label>Dropping Date</label>
-                        <input
-                            type="date"
-                            value={droppingdate}
-                            placeholder="Pickup Date"
-                            onChange={e => SetDroppingDate(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label>Dropping Time</label>
-                        <input
-                            type="time"
-                            value={droppingtime}
-                            placeholder="Dropping Date"
-                            onChange={e => SetDroppingTime(e.target.value)}
-                            required
-                        />
-                    </div>
-
-                </div>
-                <div className="location-container">
-                    <div>
-                        <label>Pickup Address</label>
-                        <textarea value={pickuppoint} rows="4" cols="50" onChange={e => SetPickupPoint(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label>Dropping Address</label>
-                        <textarea value={droppingpoint} rows="4" cols="50" onChange={e => SetDroppingPoint(e.target.value)} />
-                    </div>
-                </div>
-                <div className="driver-required-container">
-                    <FormLabel style={{ margin: '15px 0px' }}>Do you want a driver ? (500 rupees extra per day)</FormLabel>
-                    <RadioGroup aria-label="gender" name="gender1" value={driverrequired} onChange={(e) => handleChange(e)}>
-                        <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-                        <FormControlLabel value="no" control={<Radio />} label="No" />
-                    </RadioGroup>
-                </div>
-                <div className="id-proofs-container" style={{display : driverrequired == "yes" ? 'none':'flex'}}>
-                    <div>
-                        <label>Driving License</label>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg" />
-                    </div>
-                    <div>
-                        <label>National Proof</label>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg" />
-                    </div>
-
-                </div>
-            </form>
+        <div className="booking-page-container">
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                validateOnMount
+                onSubmit={onSubmit}>
+                {
+                    formik => {
+                        return (
+                            <Form className="form">
+                                <FormControl control='input' type='text' label='FirstName' name='firstName' />
+                                <FormControl control='input' type='text' label='LastName' name='lastName' />
+                                <FormControl control='input' type='email' label='Email' name='email' />
+                                <FormControl control='input' type='text' label='MobileNumber' name='mobileNumber' />
+                                <div className="input-wrapper">
+                                    <FormControl control='date' label='PickupDate' name='pickupDate'/>
+                                    <FormControl control='date' label='droppingDate' name='droppingDate' />
+                                </div>
+                                <FormControl control='textarea' label='Pickup Address' name='pickupAddress' />
+                                <FormControl control='radio' label='Need a driver ?' name='driverRequired' options={radioOptions} />
+                                <div className='input-wrapper' style={{display : formik.values.driverRequired == 'Yes' ? 'none' : 'flex'}}>
+                                    <FormControl control='input' type='file' label='Driving License' name='license' accept='image/png,image/jpg,image/jpeg'/>
+                                    <FormControl control='input' type='file' label='National Identity' name='identity' accept='image/png,image/jpg,image/jpeg' />
+                                </div>
+                                <div className='input-container terms'>
+                                    <h2>Terms and Regulations</h2>
+                                    <ul>
+                                        <li>{"6 liters of Basic amount of fuel will be provided"}</li>
+                                        <li>3000Rs of Refundable amount should be paid to the before picking up the car.
+                                            The amount will be refunded once the car is returned without any damage</li>
+                                        <li>The extra money will be collected as if any major accidents occur to the car</li>
+                                        <li>Extra amout of 60Rs will be collected for the every late hour after the dropping time</li>
+                                        <li>Vehicle must be returned to the office if you didn't pick the driver</li>
+                                        <li>vehicle must be booked before 3 hours of pickup time</li>
+                                    </ul>
+                                </div>
+                                <FormControl control='checkbox' label='Agree to all terms and regulations' name='agree' />
+                                <div className="input-container">
+                                    <button className="submit-button" type="submit" disabled={!formik.isValid || !formik.values.agree}>Book</button>
+                                </div>
+                            </Form>
+                        )
+                    }
+                }
+            </Formik>
         </div>
     )
 }

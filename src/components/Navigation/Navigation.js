@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {connect} from 'react-redux';
 import './Navigation.css';
 
 
@@ -21,7 +22,7 @@ const Navigation  = (props) =>{
                         <li><a href="/">Home</a></li>
                         <li><a href="/car-listings">Car Listing</a></li>
                         <li><a href="/aboutus">Aboutus</a></li>
-                        <li><a href="#">Login</a></li>
+                        {props.isLogged ? <li><a href="/user/profile">Profile</a></li>:<li><a href="/signin">Login</a></li>}
                     </ul>
                     <div className='menu-btn' onClick={changeSideBar}>
                         <i className={sidebarOpen ? 'fas fa-bars active' : 'fas fa-bars'}></i>
@@ -30,4 +31,9 @@ const Navigation  = (props) =>{
             </nav>
     )
 }
-export default Navigation;
+const mapStateToProps = state => {
+    return {
+        isLogged : state.AuthenticationReducer.isLogged
+    }
+}
+export default connect(mapStateToProps)(Navigation);

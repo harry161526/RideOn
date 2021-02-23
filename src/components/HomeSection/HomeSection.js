@@ -2,7 +2,8 @@ import react, { useState,useEffect } from 'react';
 import './HomeSection.css';
 import {CgChevronRight, CgOptions} from 'react-icons/cg'
 import ShowCardView from '../showCardView/showCardView';
-import Testimonial from '../testimonial/testimonial'
+import Testimonial from '../testimonial/testimonial';
+import Spinner from '@material-ui/core/CircularProgress'
 
 const HomeSection = () => {
     const BASE_URL = 'https://rocky-river-62504.herokuapp.com/';
@@ -22,7 +23,7 @@ const HomeSection = () => {
     
     },[BrandData]);
 
-    let brands = null;
+    let brands = <Spinner />;
     if(!loading)
     {
         console.log(BrandData)

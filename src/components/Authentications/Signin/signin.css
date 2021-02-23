@@ -1,0 +1,12 @@
+.signin-container {
+    margin-top: 90px;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+.form {
+    padding: 4rem 1rem;
+    border: 1px solid lightgray;
+    box-shadow: 6px 6px 100px rgb(197, 190, 190);
+}

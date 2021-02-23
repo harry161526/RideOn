@@ -1,32 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import './Carlistings.css';
 import CarCard from '../CarCard/CarCard';
+import {connect} from 'react-redux'
+import * as actionCreators from '../../Redux/Actions/index';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
-function CarListings() {
-    const [cars,setCars] = useState([]);
-    const [loading,setloading] = useState(false)
-
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      '& > * + *': {
+        marginLeft: theme.spacing(2),
+      },
+    },
+  }));
+function CarListings(props) {
+    const classes = useStyles();
+   
     useEffect(async () => {
-        if(cars.length == 0)
+        if(props.cars.length == 0)
         {
-            setloading(true);
-            const res = await fetch('https://rocky-river-62504.herokuapp.com/cars/');
-            const response = await res.json();
-            setCars(response);
-            setloading(false)
+            props.fetchCars();
         }
        
-    },[cars]);
-    console.log(cars);
-    let result = null;
-
-    if(!loading)
+    },[]);
+    console.log(props.cars);
+    let result = (
+        <div className={classes.root}>
+            <CircularProgress />
+        </div>    
+    );
+    if(!props.loading)
     {
-        result = cars.map((car) => {
+        result = props.cars.map((car) => {
             return <CarCard Cardata={car} key={car._id} />
         })
     }
+    
+
     return (
         <div className="carlistings-container">
             <div className="head-section-2">
@@ -54,5 +66,15 @@ function CarListings() {
         </div>
     )
 }
-
-export default CarListings;
+const mapStateToProps = (state) => {
+    return {
+        cars : state.rootReducer.cars,
+        loading : state.rootReducer.loading
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchCars : () => dispatch(actionCreators.fetchCars())
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(CarListings);

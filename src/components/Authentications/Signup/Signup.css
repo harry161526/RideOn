@@ -1,0 +1,38 @@
+.signup-container {
+    margin-top: 70px;
+    width: 100%;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+}
+.form {
+    background-color: #fff;
+    margin: 0 auto;
+    border: none;
+    max-width: 450px;
+    align-items: center;
+    padding: 2rem;
+}
+.form h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1d2355;
+}
+.input-container {
+    align-items: center;
+}
+.input-container label {
+    width: 85%;
+    text-align: start;
+}
+.signup {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.8rem;
+    background-color: #1d2355;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
