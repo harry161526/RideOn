@@ -3,9 +3,10 @@ import Aux from '../../Aux/Aux';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 
-function Layout(props)
+const Layout = props =>
 {
-    return(
+    const matchingRoutes = ['/secret/admin','/secret/admin/','/admin','/admin/addcar']
+    let container = (
         <Aux>
             <Navigation/>
             <div className="container">
@@ -13,7 +14,21 @@ function Layout(props)
             </div>
             <Footer />
         </Aux>
-        
+    )
+    if(matchingRoutes.includes(window.location.pathname))
+    {
+        container = (
+            <Aux>
+                <div className="conatiner">
+                    {props.children}
+                </div>
+            </Aux>
+        )
+    }
+    return(
+        <Aux>
+            {container}
+        </Aux>
     )
 }
 

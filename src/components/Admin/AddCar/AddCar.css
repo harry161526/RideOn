@@ -1,0 +1,19 @@
+.addcar-container {
+    margin-left: 30%;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    padding: 1rem 0.5rem;
+}
+.addcar-form {
+    
+    width: 500px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+}

@@ -2,6 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes';
 
 const initialState = {
     cars : [],
+    brands : [],
     loading : false,
     error : null
 }
@@ -25,7 +26,12 @@ const reducer = (state = initialState,action) => {
                 ...state,
                 error : action.error,
                 loading : false
-            }        
+            }
+        case actionTypes.FETCH_BRANDS_SUCCESS :
+            return {
+                ...state,
+                brands : action.brands
+            }            
         default :
             return state;
     }

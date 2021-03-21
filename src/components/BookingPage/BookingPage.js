@@ -64,7 +64,7 @@ function BookingPage() {
                 {
                     formik => {
                         return (
-                            <Form className="form">
+                            <Form className="booking-form">
                                 <FormControl control='input' type='text' label='FirstName' name='firstName' />
                                 <FormControl control='input' type='text' label='LastName' name='lastName' />
                                 <FormControl control='input' type='email' label='Email' name='email' />

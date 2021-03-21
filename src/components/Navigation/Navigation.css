@@ -50,6 +50,7 @@
     list-style: none;
     display: block;
     text-align: center;  
+    /* margin-left:0.1rem; */
 }
 .navbar .menu li a {
     color: #ffffff;
@@ -57,6 +58,19 @@
     font-weight: 500;
     margin: 1.6rem 0;
     display: inline-block;
+}
+.navbar .menu .signup-btn{
+    background-color: #fff;
+    color:#1d2533;
+    padding:5px 20px;
+    border-radius: 24px;
+    border:1px solid transparent;
+    transition: all .45s ease;
+}
+.navbar .menu .signup-btn:hover{
+    background-color: #1d2533;
+    color:#fff;
+    border:1px solid #fff;
 }
 
 .menu-btn {

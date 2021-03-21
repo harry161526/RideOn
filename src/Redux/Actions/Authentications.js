@@ -76,8 +76,9 @@ export const login = (data) => {
                 }
                 else
                 {
-                    localStorage.setItem('Access',user.token);
-                    dispatch(loginSuccess(user.user[0]))
+                    
+                    localStorage.setItem('AccessToken',user.token);
+                    dispatch(loginSuccess(user.user))
                 }
                 
             })
@@ -91,4 +92,46 @@ export const login = (data) => {
             dispatch(loginFailed(err.message))
         })
     }
+}
+export const logoutStarted = () => {
+    return {
+        type : actionTypes.LOGOUT_STARTED,
+    }
+}
+
+export const logoutSuccess = () => {
+    return {
+        type : actionTypes.LOGOUT_SUCCESS,
+    }
+}
+
+export const logout = () => {
+    return dispatch => {
+        dispatch(logoutStarted())
+        setTimeout(() => {
+            localStorage.removeItem('AccessToken');
+            dispatch(logoutSuccess())
+        }, 2000);
+        
+    }
+}
+
+export const checkAuthStatus = () => {
+   return dispatch => {
+       console.log("entered again....");
+       dispatch(loginStarted());
+       fetch("https://rocky-river-62504.herokuapp.com/user/checktoken",{method : 'post',headers : {
+            'Authorization' : 'Bearer '+localStorage.getItem('AccessToken')
+        }})
+        .then(response => {
+            response.json()
+            .then(data => {
+                
+               dispatch(loginSuccess(data.user))
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
+        })
+   }
 }

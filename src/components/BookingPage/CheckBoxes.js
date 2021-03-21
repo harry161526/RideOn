@@ -11,7 +11,7 @@ function CheckBoxes(props) {
                     ({field}) => {
                         return(
                             <div>
-                                <input style={{marginRight : '10px'}}type='checkbox' id='' {...field} name={name}/>
+                                <input style={{marginRight : '10px'}} type='checkbox' id='' {...field} name={name}/>
                                 <label className='label'>{label}</label>
                             </div>
                         )

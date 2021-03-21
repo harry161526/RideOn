@@ -110,3 +110,27 @@ export const uploadImageFailed = (error) => {
      }
      
  }
+ const fetchingBrandsSuccess = (data) => {
+     return {
+         type : actionTypes.FETCH_BRANDS_SUCCESS,
+         brands : data
+     }
+ }
+ export const getBrands = () => {
+     return dispatch => {
+        fetch("https://rocky-river-62504.herokuapp.com/cars/brands/")
+        .then(response => {
+            response.json()
+            .then(data => {
+                console.log(data)
+                dispatch(fetchingBrandsSuccess(data))
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
+        })
+        .catch(err => {
+            console.log(err.message);
+        })
+     }
+ }

@@ -4,7 +4,9 @@ const initialState = {
     user : {},
     loginLoading : false,
     isLogged : false,
-    loginError : null
+    isAdmin : false,
+    loginError : null,
+    logoutLoading : false
 }
 const reducer = (state=initialState,action) => {
     switch(action.type)
@@ -19,7 +21,8 @@ const reducer = (state=initialState,action) => {
                 ...state,
                 user : action.user,
                 isLogged : true,
-                loginLoading : false
+                loginLoading : false,
+                isAdmin : action.user.isAdmin
             }
         case actionTypes.LOGIN_FAILED :
             return {
@@ -27,7 +30,19 @@ const reducer = (state=initialState,action) => {
                 loginLoading : false,
                 loginError : action.error
             }
-                        
+        case actionTypes.LOGOUT_STARTED :
+            return {
+                ...state,
+                logoutLoading : true,
+            }
+        case actionTypes.LOGOUT_SUCCESS :
+            return {
+                ...state,
+                user : {},
+                isLogged : false,
+                isAdmin : false,
+                logoutLoading : false,
+            }                    
         default :
             return state;
     }

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
 }
-.form {
+.booking-form {
     width: 100%;
     max-width: 769px;
     display: flex;

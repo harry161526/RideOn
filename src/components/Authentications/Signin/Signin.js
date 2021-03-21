@@ -60,7 +60,7 @@ const SignIn = (props) => {
                   <button className='signup' type='submit'>Signup</button>
               </div>
               <div style={{marginTop : '10px'}}>
-                  <Link to={{pathname : '/signup'}}>Don't have a account ? SignUp</Link>
+                  <Link to={{pathname : '/signup'}}><span style={{'color':'rgba(0,0,0,0.6)'}}>Don't have a account ?</span> SignUp</Link>
               </div>
             </Form>
           )

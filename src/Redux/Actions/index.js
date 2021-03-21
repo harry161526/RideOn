@@ -1,2 +1,2 @@
-export {fetchCars} from './Cars';
-export {signup,login} from './Authentications'
+export {fetchCars,getBrands} from './Cars';
+export {signup,login,logout,checkAuthStatus} from './Authentications'
